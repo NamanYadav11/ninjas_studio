@@ -1,0 +1,594 @@
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx whole body CSS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+:root{
+    --background-color:#0c1027;
+    --text-color:#ffff;
+    --text-color2:#93a8b3;
+    --hover-color:#50e4c3;
+    --background-shade:#12193e;
+}
+
+body{
+    background-color:var(--background-color) ;
+    margin: 3% 4.8% 3%;
+    /* border: 2px solid black; */
+    width: 90.4%;
+    height: 80vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Header section xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+/* NAV_BAR */
+nav{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+
+    
+
+}
+
+.nav-bar{
+    margin-top: -1rem;
+}
+
+.music-time{
+    height: 3rem;
+    width: 3.5rem;
+    margin-right: 0.2rem;
+}
+
+.nav-l{ 
+    display: flex;
+    align-items:flex-start;
+    margin-left:-2.5rem;
+}
+
+.nav-l ul{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    list-style: none;
+    text-decoration: none;
+    
+
+
+}
+
+.nav-r ul{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-end;
+    list-style: none;
+    text-decoration: none;
+    
+
+}
+
+ul li a{
+    color:var(--text-color);
+    text-decoration: none;
+}
+
+ul li{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 2rem;
+}
+
+.studio{
+    font-weight: 600;
+}
+
+.search-bar{
+    height: 1.8rem;
+    width:18.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: var(--background-shade);
+    margin-right: 2rem;
+    padding: 0.25rem 0rem 0.25rem 0rem;
+}
+
+.fa-bell{
+    margin-right: 1rem;
+    margin-left: 0.7rem;
+    color:var(--text-color) ;
+}
+
+.fa-bell:hover{
+    color: var(--hover-color);
+}
+
+.fav{
+    margin-left:2rem ;
+}
+
+.fav:hover{
+    color: var(--hover-color);
+}
+
+form i{
+    color:var(--text-color2);
+}
+
+::placeholder{
+    color: var(--text-color2);
+    font-weight: 10;
+}
+
+.search-box{
+    height: 1rem;
+    width:15rem ;
+    border: none;
+    background: transparent;
+    color: var(--text-color2);
+    
+
+}
+
+*:focus {
+    outline: none;
+}
+
+
+.profile-photo{
+    margin-left: 1.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 60%;
+}
+
+/* .profile-photo:hover{
+    box-shadow: 0rem 0rem 1rem 0.2rem var(--hover-color);
+} */
+
+.adjust{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-menu:target{
+    background-color: var(--background-shade);
+    list-style: none;
+    padding: 0;
+    height: 5.5rem;
+    width: 9rem;
+    padding:0.5rem;
+    border-radius: 1rem;
+    margin: 0;
+    position: fixed;
+    right: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    display: block;
+}
+
+#user-menu{
+    list-style: none;
+    height: 0;
+    width: 0;
+    position: fixed;
+    /* top:16rem ; */
+    overflow: hidden;
+    transition: all 0.1s ease-out;
+}
+
+#user-menu li{
+    
+    padding:0.35rem 0rem 0.35rem 0.03rem ;
+    color: var(--text-color2);
+}
+
+.close{
+    text-decoration: none;
+    color:var(--text-color2);
+}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Main section xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+main{
+    padding-top: 4rem;
+    /* border: 2px solid white; */
+    height: 225vh;
+    margin: 0 3rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.left-content{
+    /* border: 2px solid whitesmoke; */
+    height:150vh;
+    width: 130vw;
+    margin-right: 1rem;
+}
+
+
+[type=radio]{
+    display: none;
+}
+  
+#carousel{
+    height: 35vh;
+    position: relative;
+    perspective: 1000px;
+    transform-style:preserve-3d;
+    padding: 0 1rem 2rem;
+}
+  
+#carousel label{
+    margin: auto;
+    width: 41vw;
+    height:60vh;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease ;
+}
+  
+#s1:checked ~ #slide4,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide3
+{
+box-shadow: 0 1px 10px 10 rgba(0, 0, 0, 0.9);
+transform: translate3d(-30%,0,-200px);
+}
+  
+#s1:checked ~ #slide1,
+#s3:checked ~ #slide3,
+#s4:checked ~ #slide4
+{
+box-shadow: 0 13px 30px 10 rgba(0,0,0,.3);
+transform: translate3d(0,0,0);
+}
+
+#s1:checked ~ #slide3,
+#s3:checked ~ #slide4,
+#s4:checked ~ #slide1{
+box-shadow: 0 1px 10px 10 rgba(0,0,0,.9);
+transform: translate3d(30%,0,-200px);
+}
+
+
+/* Latest release */
+ 
+
+.latest-release {
+
+    margin-top: 10rem;
+    width: 55vw;
+    height:52vh;
+    /* border: 1px solid whitesmoke; */
+    padding:0.5rem 0 0 0;
+    color: var(--text-color);
+}
+
+.latest-start{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: -1.5rem;
+}
+
+
+.latest{
+    height:20vh;
+    width: 28vw; 
+    /* border: 1px solid var(--text-color); */
+    position: relative;
+    right: 0.4rem;
+    /* margin-bottom: 1rem; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.latest:hover{
+    background-color:var(--background-shade);
+
+}
+.song-list-sh{
+    height:20vh;
+    width: 52vh; 
+    display: flex;
+    align-items:center;
+}
+
+.music-photo{
+    margin-left:0.5rem;
+    height: 5rem;
+    width: 5rem;
+    
+}
+
+
+.song-name-sm h5,.song-name-sm p{
+    padding: 0;
+    margin: 0;
+    font-size:x-small;
+    padding-left: 0.5rem;
+}
+
+.song-name-sm p{
+    font-size: xx-small;
+    color: var(--text-color2);
+}
+
+
+.Release{
+    /* border: 2px solid white; */
+    height: 14rem;
+    width: 49vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.top{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bottom{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dots{
+    display: flex;
+    flex-direction: row;
+    padding-right: 1rem;
+}
+
+.dots div{
+    height: 2px;
+    width:2px;
+    margin-right:1px;
+    border:0.01rem solid var(--text-color2);
+    background-color: var(--text-color2);
+    border-radius: 50%;
+}
+
+
+.song-duration{
+    font-size: x-small;
+    color: var(--text-color2);
+}
+
+
+/* Popular artist */
+
+.popular-artist{
+    margin-top:1rem;
+    width: 55vw;
+    height:40vh;
+    /* border: 1px solid whitesmoke; */
+}
+
+.title{
+    margin-top:-0.2rem;
+    color: var(--text-color);
+}
+
+
+
+.artists{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.artist-name{
+    font-size:small;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 650;
+   
+
+}
+
+.artist-photo{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+}
+
+ /* Station */
+ .station{
+    background-color: var(--background-shade);
+    margin-top:1rem;
+    width: 55vw;
+    height:25vh;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--text-color);
+}
+
+
+.mood-info{
+    position: relative;
+}
+
+
+.mood-name{
+    position: absolute;
+    left: 1.6rem;
+    bottom: 1.5rem;
+    font-size:small;
+    font-weight: 550;
+    text-align: center;
+}
+
+.mood-photo{
+    
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.workout{
+    left: 0.9rem;
+}
+
+
+/* Music-Zoner */
+
+.music-zoner{
+    background-color: var(--background-color);
+    margin-top:3rem;
+    width: 55vw;
+    height:30vh;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.music-info{
+    position: relative;
+}
+
+
+.music-name{
+    position: absolute;
+    left: 5rem;
+    bottom: 4rem;
+    font-size:medium;
+    font-weight: 550;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.music-pic{
+    margin-left: 0;
+    height: 10.2rem;
+    width: 14rem;
+    opacity: 0.9;
+}
+
+
+
+
+/* Queue Section */
+
+.right-content {
+    /* border: 2px solid whitesmoke; */
+    height:150vh;
+    width: 50vh;
+    padding:1.5rem 0.4rem 0;
+    color: var(--text-color);
+    margin-left: 1rem;
+}
+
+
+.Queue-start{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: -1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.que-c{
+    color:var(--hover-color);
+    font-size:x-small;
+}
+
+
+.queue{
+    height:9vh;
+    width: 52vh; 
+    /* border: 1px solid var(--text-color); */
+    position: relative;
+    right: 0.4rem;
+    margin-top: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.queue:hover{
+    background-color:var(--background-shade);
+}
+
+
+.song-list{
+    height:9vh;
+    width: 52vh; 
+    display: flex;
+    align-items:center;
+}
+
+.number{
+    font-size: x-small;
+    padding-left: 0.6rem;
+    color: var(--text-color2);
+}
+
+
+.music-cover{
+    margin-left:0.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius:0.2rem;
+}
+
+
+.song-name h5,.song-name p{
+    padding: 0;
+    margin: 0;
+    font-size:small;
+    padding-left: 0.5rem;
+}
+
+.song-name p{
+    font-size: x-small;
+    color: var(--text-color2);
+}
+
+.fa-heart{
+    padding-right: 1rem;
+    color: var(--text-color2);
+    
+}
+
+.fa-heart:hover{
+    color: var(--hover-color);
+}
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Aside section xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Footer section xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
